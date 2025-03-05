@@ -14,7 +14,8 @@ import { User } from './auth/entities/user.entity';
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
         type: 'postgres',
-        url: configService.get<string>('postgresql://postgres1:1EoQITdBsL86XPKNLXWF12D0QuqrBnIC@dpg-cv3vih56l47c7389je40-a.oregon-postgres.render.com/authe_db'),
+        url: configService.get('DATABASE_URL'),
+        // url: configService.get<string>('postgresql://postgres1:1EoQITdBsL86XPKNLXWF12D0QuqrBnIC@dpg-cv3vih56l47c7389je40-a.oregon-postgres.render.com/authe_db'),
         host: configService.get('DB_HOST', 'localhost'),
         port: configService.get<number>('DB_PORT', 5432),
         username: configService.get('DB_USERNAME', 'postgres'),
