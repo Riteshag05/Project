@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// API base URL
-const API_URL = 'http://localhost:3000';
+// Update API_URL to your deployed backend URL
+const API_URL = 'https://project-aers.onrender.com';  
 
 // Types
 interface LoginCredentials {
