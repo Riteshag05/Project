@@ -23,6 +23,9 @@ import { User } from './auth/entities/user.entity';
         database: configService.get('DB_DATABASE', 'auth_db'),
         entities: [User],
         synchronize: true, // Only for development!
+        ssl: {
+          rejectUnauthorized: false, // Important for Render
+        },
       }),
     }),
     AuthModule,
